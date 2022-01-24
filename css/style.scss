@@ -6,9 +6,9 @@ $poppins :'Poppins',
 sans-serif;
 
 //MIXINS
-@mixin flex_center($direction) {
+@mixin flex_center($direction, $justify) {
     display: flex;
-    justify-content: center;
+    justify-content: $justify;
     align-items: center;
     flex-direction: $direction;
 }
@@ -55,7 +55,7 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     @include custom_bg_svg;
-    @include flex_center(column);
+    @include flex_center(column, center);
 }
 
 /*
@@ -103,11 +103,26 @@ h6 {
 
 /* ------------------------------- APP STYLING ------------------------------ */
 
+//HEADER
+.header_container {
+    @include flex_center(row, flex-end);
+    width: 100%;
+    margin-right: 2rem;
 
+    .git_svg {
+        height: 4vh;
+        opacity: 0.5;
+    }
+
+    & .git_svg:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+}
 
 //LOGO
 .logo_container {
-    @include flex_center(row);
+    @include flex_center(row, center);
     color: #fff;
     height: 20vh;
     font-size: 1rem;
@@ -119,7 +134,7 @@ h6 {
 }
 
 .display_container {
-    @include flex_center(row);
+    @include flex_center(row, center);
 }
 
 .img_container {
@@ -135,7 +150,7 @@ h6 {
 }
 
 .btn_container {
-    @include flex_center(row);
+    @include flex_center(row, center);
     height: 20vh;
 }
 
