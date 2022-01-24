@@ -200,17 +200,22 @@ h6 {
 }
 
 @media only screen and (max-width: 700px) {
+  .header_container {
+    clear: both;
+    position: relative;
+    margin-bottom: 5vh;
+  }
   .logo_container {
-    margin-bottom: 2rem;
+    margin-bottom: 3vh;
   }
   .logo_container h1 {
     font-size: 4vh;
   }
   .img_container {
-    width: 53vh;
+    width: 40vh;
   }
   .btn_container {
-    margin-top: 2rem;
+    margin-top: 3vh;
   }
   .footer_container {
     clear: both;
